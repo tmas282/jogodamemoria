@@ -36,6 +36,7 @@
             // lblVitoria
             // 
             this.lblVitoria.AutoSize = true;
+            this.lblVitoria.BackColor = System.Drawing.Color.Transparent;
             this.lblVitoria.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVitoria.Location = new System.Drawing.Point(45, 137);
             this.lblVitoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -48,8 +49,8 @@
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Impact", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnVoltar.Location = new System.Drawing.Point(58, 296);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVoltar.Location = new System.Drawing.Point(613, 11);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(144, 50);
             this.btnVoltar.TabIndex = 5;
@@ -61,13 +62,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 390);
+            this.BackgroundImage = global::jogodamemoria.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(768, 420);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblVitoria);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "vitoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vitória";
             this.Load += new System.EventHandler(this.Vitoria_Load);
             this.ResumeLayout(false);

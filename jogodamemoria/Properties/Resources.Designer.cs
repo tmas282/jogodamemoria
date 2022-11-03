@@ -63,6 +63,16 @@ namespace jogodamemoria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap caixa {
             get {
                 object obj = ResourceManager.GetObject("caixa", resourceCulture);
@@ -186,6 +196,16 @@ namespace jogodamemoria.Properties {
         internal static System.Drawing.Bitmap img9 {
             get {
                 object obj = ResourceManager.GetObject("img9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sair {
+            get {
+                object obj = ResourceManager.GetObject("sair", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

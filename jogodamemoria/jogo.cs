@@ -64,6 +64,7 @@ namespace jogodamemoria
         bool segundaImgJogada = false;
         bool acertou = false;
         PictureBox primeiroBtnJogada, segundoBtnJogada;
+        string nomeBtn1, nomeBtn2;
         int tempo = 0;
         public Timer tempo2seg = new Timer();
         public void ClicarNaImg(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace jogodamemoria
                     EscolherImg(btn, Int32.Parse(nomeTemp.ToString()));
                     if (primeiraImgJogada == false)
                     {
+                        nomeBtn1 = nomeTemp;
                         primeiroBtnJogada = btn;
                         primeiroBtnJogada.Enabled = false;
                         primeiraImgJogada = true;
@@ -93,12 +95,13 @@ namespace jogodamemoria
                     }
                     else
                     {
+                        nomeBtn2 = nomeTemp;
                         segundoBtnJogada = btn;
                         segundaImgJogada = true;
                         tempo2seg.Enabled = true;
                         tempo2seg.Interval = 1000;
                         tempo2seg.Tick += new EventHandler(Esperar2sec_Tick);
-                        if (segundoBtnJogada.Name[0].ToString() == primeiroBtnJogada.Name[0].ToString())
+                        if (nomeBtn1.ToString() == nomeBtn2.ToString())
                         {
                             acertou = true;
                             valoresDescobertos.Add(Int32.Parse(segundoBtnJogada.Name[0].ToString()));
@@ -209,7 +212,6 @@ namespace jogodamemoria
                     VerificarValor();
                     btn.Name = nameTemp;
                     //btn.Text = btn.Name; //--> para testar melhor
-                    // erros -> banana e kiwi equivalem
                     btn.Click += new EventHandler(ClicarNaImg);
                     this.Controls.Add(btn);
                     ix += 100;
@@ -222,6 +224,9 @@ namespace jogodamemoria
 
         private void Jogo_Load(object sender, EventArgs e)
         {
+            this.SetStyle(System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = System.Drawing.Color.Transparent; this.SetStyle(System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = System.Drawing.Color.Transparent;
             CriarBtn(x, y);
             this.Width = 625; 
             this.Height = 375;
@@ -254,7 +259,7 @@ namespace jogodamemoria
                 timer.Stop();
                 this.Hide();
                 vitoria formVitoria = new vitoria();
-                formVitoria.segundos = tempo;
+                formVitoria.segundos = tempo-1;
                 formVitoria.ShowDialog();
                 Environment.Exit(0);
             }
@@ -295,6 +300,15 @@ namespace jogodamemoria
                 }
             }
         }
+
+        private void BtnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            comecar formVitoria = new comecar();
+            formVitoria.ShowDialog();
+            Environment.Exit(0);
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             tempo++;

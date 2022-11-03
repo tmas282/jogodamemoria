@@ -34,6 +34,8 @@
             this.btnJogar = new System.Windows.Forms.Button();
             this.lblJogar = new System.Windows.Forms.Label();
             this.cbDificuldade = new System.Windows.Forms.ComboBox();
+            this.btnSair = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -43,8 +45,8 @@
             // 
             // btnJogar
             // 
-            this.btnJogar.Location = new System.Drawing.Point(245, 188);
-            this.btnJogar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogar.Location = new System.Drawing.Point(240, 220);
+            this.btnJogar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogar.Name = "btnJogar";
             this.btnJogar.Size = new System.Drawing.Size(102, 26);
             this.btnJogar.TabIndex = 2;
@@ -55,8 +57,9 @@
             // lblJogar
             // 
             this.lblJogar.AutoSize = true;
+            this.lblJogar.BackColor = System.Drawing.Color.Transparent;
             this.lblJogar.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJogar.Location = new System.Drawing.Point(80, 46);
+            this.lblJogar.Location = new System.Drawing.Point(58, 56);
             this.lblJogar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJogar.Name = "lblJogar";
             this.lblJogar.Size = new System.Drawing.Size(477, 80);
@@ -71,26 +74,42 @@
             "Fácil",
             "Médio",
             "Difícil"});
-            this.cbDificuldade.Location = new System.Drawing.Point(200, 164);
-            this.cbDificuldade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDificuldade.Location = new System.Drawing.Point(197, 174);
+            this.cbDificuldade.Margin = new System.Windows.Forms.Padding(2);
             this.cbDificuldade.Name = "cbDificuldade";
             this.cbDificuldade.Size = new System.Drawing.Size(192, 21);
             this.cbDificuldade.TabIndex = 6;
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.Transparent;
+            this.btnSair.BackgroundImage = global::jogodamemoria.Properties.Resources.sair;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.Location = new System.Drawing.Point(538, 12);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(50, 50);
+            this.btnSair.TabIndex = 7;
+            this.btnSair.TabStop = false;
             // 
             // comecar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::jogodamemoria.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.cbDificuldade);
             this.Controls.Add(this.lblJogar);
             this.Controls.Add(this.btnJogar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "comecar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jogo da memória";
-            this.Load += new System.EventHandler(this.comecar_Load);
+            this.Load += new System.EventHandler(this.Comecar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +121,7 @@
         private System.Windows.Forms.Button btnJogar;
         private System.Windows.Forms.Label lblJogar;
         private System.Windows.Forms.ComboBox cbDificuldade;
+        private System.Windows.Forms.PictureBox btnSair;
     }
 }
 

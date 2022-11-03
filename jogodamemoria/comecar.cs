@@ -45,9 +45,15 @@ namespace jogodamemoria
             this.Show();
         }
 
-        private void comecar_Load(object sender, EventArgs e)
+        private void Comecar_Load(object sender, EventArgs e)
         {
             cbDificuldade.Text = "Fácil";
+            btnSair.Click += new EventHandler(BtnSair_Click);
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
