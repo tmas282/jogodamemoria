@@ -115,7 +115,6 @@ namespace jogodamemoria
                     }
                 }
             }
-
         }
         public void Esperar2sec_Tick(object sender, EventArgs e)
         {
@@ -178,7 +177,7 @@ namespace jogodamemoria
                 }
                 if (existeDois == false && existeUm == true)
                 {
-                    nameTemp = String.Format("{0}_2", valor); //valor(indica a img) e _2 indica que é a segunda img
+                    nameTemp = String.Format("{0}_2", valor);
                     imgTemp = valor;
                     valores.Add(valor);
                     break;
@@ -211,7 +210,6 @@ namespace jogodamemoria
                     VerificarValor();
                     EscolherImg(btn, imgTemp);
                     btn.Name = nameTemp;
-                    //btn.Text = btn.Name; //--> para testar melhor
                     btn.Click += new EventHandler(ClicarNaImg);
                     this.Controls.Add(btn);
                     ix += 100;
@@ -219,9 +217,7 @@ namespace jogodamemoria
                 ix = 100;
                 iy += 100;
             }
-
         }
-
         private void Jogo_Load(object sender, EventArgs e)
         {
             this.SetStyle(System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, true);
@@ -308,7 +304,6 @@ namespace jogodamemoria
             formVitoria.ShowDialog();
             Environment.Exit(0);
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             tempo++;
@@ -322,7 +317,6 @@ namespace jogodamemoria
                         btn.BackgroundImage = Properties.Resources.caixa;
                     }
                 }
-                
             }
             VerificarSeVenceu();
             DesativarCartasGanhas();
