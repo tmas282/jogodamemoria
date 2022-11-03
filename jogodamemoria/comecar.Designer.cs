@@ -54,7 +54,7 @@
             "Fácil",
             "Médio",
             "Difícil"});
-            this.cbDificuldade.Location = new System.Drawing.Point(158, 160);
+            this.cbDificuldade.Location = new System.Drawing.Point(154, 192);
             this.cbDificuldade.Margin = new System.Windows.Forms.Padding(2);
             this.cbDificuldade.Name = "cbDificuldade";
             this.cbDificuldade.Size = new System.Drawing.Size(278, 39);
@@ -76,7 +76,7 @@
             this.btnJogar.BackColor = System.Drawing.Color.Transparent;
             this.btnJogar.BackgroundImage = global::jogodamemoria.Properties.Resources.imgBtnJogar;
             this.btnJogar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnJogar.Location = new System.Drawing.Point(224, 215);
+            this.btnJogar.Location = new System.Drawing.Point(217, 253);
             this.btnJogar.Name = "btnJogar";
             this.btnJogar.Size = new System.Drawing.Size(148, 47);
             this.btnJogar.TabIndex = 8;
@@ -88,9 +88,9 @@
             this.imgTitulo.BackColor = System.Drawing.Color.Transparent;
             this.imgTitulo.BackgroundImage = global::jogodamemoria.Properties.Resources.imgTitulo;
             this.imgTitulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgTitulo.Location = new System.Drawing.Point(67, 53);
+            this.imgTitulo.Location = new System.Drawing.Point(48, 91);
             this.imgTitulo.Name = "imgTitulo";
-            this.imgTitulo.Size = new System.Drawing.Size(465, 86);
+            this.imgTitulo.Size = new System.Drawing.Size(499, 86);
             this.imgTitulo.TabIndex = 9;
             this.imgTitulo.TabStop = false;
             // 

@@ -99,7 +99,7 @@ namespace jogodamemoria
                         segundoBtnJogada = btn;
                         segundaImgJogada = true;
                         tempo2seg.Enabled = true;
-                        tempo2seg.Interval = 1000;
+                        tempo2seg.Interval = 500;
                         tempo2seg.Tick += new EventHandler(Esperar2sec_Tick);
                         if (nomeBtn1.ToString() == nomeBtn2.ToString())
                         {
@@ -207,9 +207,9 @@ namespace jogodamemoria
                     btn.Location = new Point(ix, iy);
                     btn.Width = 100;
                     btn.Height = 100;
-                    btn.BackgroundImage = Properties.Resources.caixa;
                     btn.BackgroundImageLayout = ImageLayout.Stretch;
                     VerificarValor();
+                    EscolherImg(btn, imgTemp);
                     btn.Name = nameTemp;
                     //btn.Text = btn.Name; //--> para testar melhor
                     btn.Click += new EventHandler(ClicarNaImg);
@@ -313,6 +313,17 @@ namespace jogodamemoria
         {
             tempo++;
             lblTempo.Text = String.Format("Tempo: {0}s",tempo.ToString());
+            if (tempo == 1)
+            {
+                foreach (Control btn in this.Controls)
+                {
+                    if (btn is PictureBox)
+                    {
+                        btn.BackgroundImage = Properties.Resources.caixa;
+                    }
+                }
+                
+            }
             VerificarSeVenceu();
             DesativarCartasGanhas();
         }
