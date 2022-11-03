@@ -12,7 +12,7 @@ namespace jogodamemoria
         {
             InitializeComponent();
         }
-        public void EscolherImg(Button btn, int  num)
+        public void EscolherImg(PictureBox btn, int  num)
         {
             switch (num)
             {
@@ -63,12 +63,12 @@ namespace jogodamemoria
         bool primeiraImgJogada = false;
         bool segundaImgJogada = false;
         bool acertou = false;
-        Button primeiroBtnJogada, segundoBtnJogada;
+        PictureBox primeiroBtnJogada, segundoBtnJogada;
         int tempo = 0;
         public Timer tempo2seg = new Timer();
         public void ClicarNaImg(object sender, EventArgs e)
         {
-            Button btn = (sender as Button);
+            PictureBox btn = (sender as PictureBox);
             string nomeTemp = "";
             bool acabou = false;
             foreach (char charName in btn.Name)
@@ -93,7 +93,6 @@ namespace jogodamemoria
                     }
                     else
                     {
-                        primeiroBtnJogada.Enabled = true;
                         segundoBtnJogada = btn;
                         segundaImgJogada = true;
                         tempo2seg.Enabled = true;
@@ -108,6 +107,7 @@ namespace jogodamemoria
                         {
                             acertou = false;
                         }
+                        DesativarCartasEntreJogada();
                         break;
                     }
                 }
@@ -137,12 +137,13 @@ namespace jogodamemoria
                 tempo2seg.Enabled = false;
                 tempo2seg.Stop();
                 tempo2seg = new Timer();
-                primeiroBtnJogada = new Button();
-                segundoBtnJogada = new Button();
+                primeiroBtnJogada = new PictureBox();
+                segundoBtnJogada = new PictureBox();
                 primeiraImgJogada = false;
                 primeiraImgJogada = false;
                 segundaImgJogada = false;
                 acertou = false;
+                AtivarCartasEntreJogada();
             }
         }
         public void VerificarValor()
@@ -199,7 +200,7 @@ namespace jogodamemoria
             {
                 for (int k = 0; k < x; k++)
                 {
-                    Button btn = new Button();
+                    PictureBox btn = new PictureBox();
                     btn.Location = new Point(ix, iy);
                     btn.Width = 100;
                     btn.Height = 100;
@@ -239,7 +240,7 @@ namespace jogodamemoria
             bool ganhou = true;
             foreach(Control btn in this.Controls)
             {
-                if(btn is Button)
+                if(btn is PictureBox)
                 {
                     if (btn.Name != "ganhou")
                     {
@@ -262,11 +263,34 @@ namespace jogodamemoria
         {
             foreach (Control btn in this.Controls)
             {
-                if (btn is Button)
+                if (btn is PictureBox)
                 {
                     if (btn.Name == "ganhou")
                     {
                         btn.Enabled = false;
+                    }
+                }
+            }
+        }
+        public void DesativarCartasEntreJogada()
+        {
+            foreach (Control btn in this.Controls)
+            {
+                if (btn is PictureBox)
+                {
+                    btn.Enabled = false;
+                }
+            }
+        }
+        public void AtivarCartasEntreJogada()
+        {
+            foreach (Control btn in this.Controls)
+            {
+                if (btn is PictureBox)
+                {
+                    if (btn.Name != "ganhou")
+                    {
+                        btn.Enabled = true;
                     }
                 }
             }

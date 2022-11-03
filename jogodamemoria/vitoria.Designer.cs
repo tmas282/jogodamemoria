@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vitoria));
             this.lblVitoria = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -36,9 +37,10 @@
             // 
             this.lblVitoria.AutoSize = true;
             this.lblVitoria.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVitoria.Location = new System.Drawing.Point(60, 169);
+            this.lblVitoria.Location = new System.Drawing.Point(45, 137);
+            this.lblVitoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVitoria.Name = "lblVitoria";
-            this.lblVitoria.Size = new System.Drawing.Size(812, 98);
+            this.lblVitoria.Size = new System.Drawing.Size(646, 80);
             this.lblVitoria.TabIndex = 4;
             this.lblVitoria.Text = "Venceu por 0 segundos";
             // 
@@ -46,9 +48,10 @@
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Impact", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnVoltar.Location = new System.Drawing.Point(77, 364);
+            this.btnVoltar.Location = new System.Drawing.Point(58, 296);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(192, 62);
+            this.btnVoltar.Size = new System.Drawing.Size(144, 50);
             this.btnVoltar.TabIndex = 5;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -56,11 +59,14 @@
             // 
             // vitoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 450);
+            this.ClientSize = new System.Drawing.Size(768, 390);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblVitoria);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "vitoria";
             this.Text = "Vitória";
             this.Load += new System.EventHandler(this.Vitoria_Load);

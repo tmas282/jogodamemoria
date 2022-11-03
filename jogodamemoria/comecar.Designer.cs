@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(comecar));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.btnJogar = new System.Windows.Forms.Button();
             this.lblJogar = new System.Windows.Forms.Label();
@@ -42,10 +43,10 @@
             // 
             // btnJogar
             // 
-            this.btnJogar.Location = new System.Drawing.Point(327, 231);
-            this.btnJogar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnJogar.Location = new System.Drawing.Point(245, 188);
+            this.btnJogar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJogar.Name = "btnJogar";
-            this.btnJogar.Size = new System.Drawing.Size(136, 32);
+            this.btnJogar.Size = new System.Drawing.Size(102, 26);
             this.btnJogar.TabIndex = 2;
             this.btnJogar.Text = "Jogar";
             this.btnJogar.UseVisualStyleBackColor = true;
@@ -55,9 +56,10 @@
             // 
             this.lblJogar.AutoSize = true;
             this.lblJogar.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJogar.Location = new System.Drawing.Point(106, 57);
+            this.lblJogar.Location = new System.Drawing.Point(80, 46);
+            this.lblJogar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJogar.Name = "lblJogar";
-            this.lblJogar.Size = new System.Drawing.Size(598, 98);
+            this.lblJogar.Size = new System.Drawing.Size(477, 80);
             this.lblJogar.TabIndex = 3;
             this.lblJogar.Text = "Jogo da memória";
             // 
@@ -69,20 +71,23 @@
             "Fácil",
             "Médio",
             "Difícil"});
-            this.cbDificuldade.Location = new System.Drawing.Point(266, 202);
+            this.cbDificuldade.Location = new System.Drawing.Point(200, 164);
+            this.cbDificuldade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDificuldade.Name = "cbDificuldade";
-            this.cbDificuldade.Size = new System.Drawing.Size(254, 24);
+            this.cbDificuldade.Size = new System.Drawing.Size(192, 21);
             this.cbDificuldade.TabIndex = 6;
             // 
             // comecar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.cbDificuldade);
             this.Controls.Add(this.lblJogar);
             this.Controls.Add(this.btnJogar);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "comecar";
             this.Text = "Jogo da memória";
             this.Load += new System.EventHandler(this.comecar_Load);
