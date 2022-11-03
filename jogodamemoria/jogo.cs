@@ -87,11 +87,13 @@ namespace jogodamemoria
                     if (primeiraImgJogada == false)
                     {
                         primeiroBtnJogada = btn;
+                        primeiroBtnJogada.Enabled = false;
                         primeiraImgJogada = true;
                         break;
                     }
                     else
                     {
+                        primeiroBtnJogada.Enabled = true;
                         segundoBtnJogada = btn;
                         segundaImgJogada = true;
                         tempo2seg.Enabled = true;
@@ -206,6 +208,7 @@ namespace jogodamemoria
                     VerificarValor();
                     btn.Name = nameTemp;
                     //btn.Text = btn.Name; //--> para testar melhor
+                    // erros -> banana e kiwi equivalem
                     btn.Click += new EventHandler(ClicarNaImg);
                     this.Controls.Add(btn);
                     ix += 100;
