@@ -73,7 +73,7 @@ namespace jogodamemoria
             bool acabou = false;
             foreach (char charName in btn.Name)
             {
-                if(charName.ToString() != "_")
+                if(charName.ToString() != "_" && acabou == false)
                 {
                     nomeTemp += charName;
                 }
@@ -88,6 +88,7 @@ namespace jogodamemoria
                     {
                         primeiroBtnJogada = btn;
                         primeiraImgJogada = true;
+                        break;
                     }
                     else
                     {
@@ -105,6 +106,7 @@ namespace jogodamemoria
                         {
                             acertou = false;
                         }
+                        break;
                     }
                 }
             }
@@ -203,7 +205,7 @@ namespace jogodamemoria
                     btn.BackgroundImageLayout = ImageLayout.Stretch;
                     VerificarValor();
                     btn.Name = nameTemp;
-                    //btn.Text = nameTemp; --> para testar melhor
+                    //btn.Text = btn.Name; //--> para testar melhor
                     btn.Click += new EventHandler(ClicarNaImg);
                     this.Controls.Add(btn);
                     ix += 100;
@@ -253,11 +255,25 @@ namespace jogodamemoria
                 Environment.Exit(0);
             }
         }
+        public void DesativarCartasGanhas()
+        {
+            foreach (Control btn in this.Controls)
+            {
+                if (btn is Button)
+                {
+                    if (btn.Name == "ganhou")
+                    {
+                        btn.Enabled = false;
+                    }
+                }
+            }
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             tempo++;
             lblTempo.Text = String.Format("Tempo: {0}s",tempo.ToString());
             VerificarSeVenceu();
+            DesativarCartasGanhas();
         }
     }
 }
