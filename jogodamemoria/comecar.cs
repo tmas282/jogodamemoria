@@ -41,6 +41,17 @@ namespace jogodamemoria
             jogo jogo = new jogo();
             jogo.x = x;
             jogo.y = y;
+            jogo.Width = 625;
+            jogo.Height = 375;
+            if (jogo.x * jogo.y == 16)
+            {
+                jogo.Height = 625;
+            }
+            if (jogo.x * jogo.y == 24)
+            {
+                jogo.Width = 823;
+                jogo.Height = 625;
+            }
             jogo.ShowDialog();
             this.Show();
         }

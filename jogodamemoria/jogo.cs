@@ -224,17 +224,6 @@ namespace jogodamemoria
             this.BackColor = System.Drawing.Color.Transparent; this.SetStyle(System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = System.Drawing.Color.Transparent;
             CriarBtn(x, y);
-            this.Width = 625; 
-            this.Height = 375;
-            if (x * y == 16)
-            {
-                this.Height = 625;
-            }
-            if (x * y == 24)
-            {
-                this.Width = 823;
-                this.Height = 625;
-            }
         }
         public void VerificarSeVenceu()
         {
